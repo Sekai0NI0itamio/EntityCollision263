@@ -1,7 +1,7 @@
 name: runtime-test
 
-# GitHub-only runtime test: launches the real Minecraft 26.3 Fabric client
-# headlessly (HeadlessMC + Xvfb via mc-runtime-test), which joins a
+# GitHub-only runtime test: launches the real Minecraft 26.3 NeoForge
+# client headlessly (HeadlessMC + Xvfb via mc-runtime-test), which joins a
 # single-player world, waits for chunks to load, then quits cleanly.
 # Surviving this proves the mod loads at the title screen AND in-game.
 on:
@@ -28,7 +28,7 @@ jobs:
       - name: Set up Gradle caching
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: "9.8.2"
+          gradle-version: "9.2.1"
 
       - name: Build mod
         run: |
@@ -38,19 +38,19 @@ jobs:
       - name: Stage mod for test client
         run: |
           mkdir -p run/mods
-          cp build/libs/entitycollision263-*.jar run/mods/
+          cp build/libs/entitycollision-26.3-neoforge-*.jar run/mods/
           ls -la run/mods/
 
       - name: Run Minecraft 26.3 client (title screen + in-game world load)
         uses: headlesshq/mc-runtime-test@5.0.0
         with:
           mc: 26.3
-          modloader: fabric
-          regex: .*fabric.*
-          mc-runtime-test: fabric
+          modloader: neoforge
+          regex: .*neoforge.*
+          mc-runtime-test: neoforge
           java: 25
           xvfb: "true"
-          fabric-api: 0.165.0
+          fabric-api: none
           headlessmc-command: '--jvm "-DMcRuntimeGameTest=false"'
 
       - name: Upload runtime logs

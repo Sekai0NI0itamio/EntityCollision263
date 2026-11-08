@@ -1,6 +1,6 @@
-# Entity Collision FPS Fix — Modern Port for Minecraft 26.3 (Fabric)
+# Entity Collision FPS Fix — Modern Port for Minecraft 26.3 (NeoForge)
 
-![Mod loader: Fabric](https://img.shields.io/badge/modloader-Fabric-1976d2?style=for-the-badge)
+![Mod loader: NeoForge](https://img.shields.io/badge/modloader-NeoForge-1976d2?style=for-the-badge)
 ![Minecraft: 26.3](https://img.shields.io/badge/Minecraft-26.3-green?style=for-the-badge)
 ![GitHub license](https://img.shields.io/github/license/Sekai0NI0itamio/EntityCollision263?style=for-the-badge)
 
@@ -15,7 +15,7 @@ This mod simply skips those client-side checks. Server-side behaviour —
 what actually matters for gameplay — is completely unchanged. The result:
 smoother FPS in farms, villages, and anywhere entities pile up.
 
-Now with a **modern port for Minecraft 26.3 (Fabric)**, updated for
+Now with a **modern port for Minecraft 26.3 (NeoForge)**, updated for
 26.3's accessor-based level API (`level().isClientSide()`).
 
 ### What it does
@@ -25,17 +25,16 @@ Now with a **modern port for Minecraft 26.3 (Fabric)**, updated for
 - `LivingEntity.pushEntities()` is cancelled on the client
 - No server-side changes at all — safe for multiplayer
 
-### Modern port notes (26.3)
+### Modern port notes (26.3 NeoForge)
 
 - Two tiny client-only mixins, same behaviour as the original
-- Java 25 · Fabric Loader 0.20.1+ · Fabric API 0.165.0+26.3
+- Java 25 · NeoForge 26.3.0.101+
 - Built and verified in CI via GitHub Actions
 
 ### Installation
 
-1. Install Fabric Loader for Minecraft 26.3
-2. Install Fabric API
-3. Drop `entitycollision263-*.jar` into your `mods` folder
+1. Install NeoForge for Minecraft 26.3
+2. Drop `entitycollision-26.3-neoforge-*.jar` into your `mods` folder
 
 Client-side only — you don't need it on the server.
 

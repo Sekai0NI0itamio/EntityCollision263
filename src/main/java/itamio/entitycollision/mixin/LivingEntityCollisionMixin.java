@@ -17,14 +17,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class LivingEntityCollisionMixin {
 
     @Inject(method = "isInWall", at = @At("HEAD"), cancellable = true)
-    private void entitycollision263$noClientWallCheck(CallbackInfoReturnable<Boolean> cir) {
+    private void entitycollision$noClientWallCheck(CallbackInfoReturnable<Boolean> cir) {
         if (((Entity) (Object) this).level().isClientSide()) {
             cir.setReturnValue(false);
         }
     }
 
     @Inject(method = "pushEntities", at = @At("HEAD"), cancellable = true)
-    private void entitycollision263$noPushEntitiesClient(CallbackInfo ci) {
+    private void entitycollision$noPushEntitiesClient(CallbackInfo ci) {
         if (((Entity) (Object) this).level().isClientSide()) {
             ci.cancel();
         }
