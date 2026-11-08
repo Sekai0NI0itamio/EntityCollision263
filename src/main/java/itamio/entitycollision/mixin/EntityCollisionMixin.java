@@ -10,16 +10,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
  * Port of CorgiTaco's MixinEntity: skip client-side wall-collision checks
- * (Mojang bug MC-228976). In 1.20.1, Level.isClientSide is a field.
+ * (Mojang bug MC-228976). In 1.20.1, Entity.level is private with a
+ * public level() accessor; Level.isClientSide is a field.
  */
 @Mixin(Entity.class)
-public class EntityCollisionMixin {
+public abstract class EntityCollisionMixin {
     @Shadow
-    public Level level;
+    public abstract Level level();
 
     @Inject(method = "isInWall", at = @At("HEAD"), cancellable = true)
     private void entitycollision263$noClientWallCheck(CallbackInfoReturnable<Boolean> cir) {
-        if (this.level.isClientSide) {
+        if (this.level().isClientSide) {
             cir.setReturnValue(false);
         }
     }
