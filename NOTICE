@@ -1,0 +1,25 @@
+NOTICE
+
+Entity Collision FPS Fix (Itamio port for Minecraft 26.3)
+
+This mod is an unofficial port of "Entity Collision FPS Fix" by CorgiTaco
+(and jklw10), published on Modrinth
+(https://modrinth.com/mod/entity-collision-fps-fix).
+
+Original source: https://github.com/CorgiTaco/No-Client-Side-Entity-Collision-Checks
+Original license: CC0-1.0 (see LICENSE, preserved from the original project).
+
+The original mod removes client-side entity collision checks (Entity.isInWall
+for Entity and LivingEntity, and LivingEntity.pushEntities on the client),
+which boosts FPS and works around Mojang bug MC-228976 (client-side entity
+collision checks running on the render thread).
+
+All credit for the original concept, design, and logic goes to CorgiTaco and
+the original authors. This port was created by Itamio to bring the
+functionality to Minecraft 26.3 (Fabric) because the original mod has not
+been updated to this version.
+
+Itamio does not take credit for any of the original assets or logic.
+The code was updated to be compatible with Minecraft 26.3 (Fabric), where
+Entity.level is a level() accessor and Level.isClientSide is an
+isClientSide() method.

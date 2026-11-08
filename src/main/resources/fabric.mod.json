@@ -1,0 +1,29 @@
+{
+	"schemaVersion": 1,
+	"id": "itamio_entitycollision",
+	"version": "${version}",
+	"name": "Entity Collision FPS Fix",
+	"description": "Removes client side entity collision checks, which boosts FPS. Fixes https://bugs.mojang.com/browse/MC-228976. Unofficial port for Minecraft 26.3 (Fabric) of the \"Entity Collision FPS Fix\" by CorgiTaco (CC0-1.0). Code updated to 26.3 by Itamio. See NOTICE for credit and licensing details.",
+	"authors": ["Itamio", "Corgi Taco", "jklw10"],
+	"contact": {
+		"homepage": "https://github.com/Sekai0NI0itamio/EntityCollision263",
+		"sources": "https://github.com/Sekai0NI0itamio/EntityCollision263",
+		"issues": "https://github.com/Sekai0NI0itamio/EntityCollision263/issues"
+	},
+	"license": "CC0-1.0",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"itamio.entitycollision.EntityCollisionMod"
+		]
+	},
+	"mixins": [
+		"entitycollision263.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
