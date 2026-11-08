@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "itamio.entitycollision.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+  ],
+  "client": [
+    "EntityCollisionMixin",
+    "LivingEntityCollisionMixin"
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
