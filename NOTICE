@@ -1,6 +1,6 @@
 NOTICE
 
-Entity Collision FPS Fix (Itamio port for Minecraft 26.3)
+Entity Collision FPS Fix (Itamio port for Minecraft 1.21.11 NeoForge)
 
 This mod is an unofficial port of "Entity Collision FPS Fix" by CorgiTaco
 (and jklw10), published on Modrinth
@@ -16,10 +16,10 @@ collision checks running on the render thread).
 
 All credit for the original concept, design, and logic goes to CorgiTaco and
 the original authors. This port was created by Itamio to bring the
-functionality to Minecraft 26.3 (Fabric) because the original mod has not
+functionality to Minecraft 1.21.11 (NeoForge) because the original mod has not
 been updated to this version.
 
 Itamio does not take credit for any of the original assets or logic.
-The code was updated to be compatible with Minecraft 26.3 (Fabric), where
+The code was updated to be compatible with Minecraft 1.21.11 (NeoForge), where
 Entity.level is a level() accessor and Level.isClientSide is an
 isClientSide() method.

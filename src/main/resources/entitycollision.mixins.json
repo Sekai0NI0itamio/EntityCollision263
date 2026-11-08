@@ -1,16 +1,16 @@
 {
   "required": true,
+  "minVersion": "0.8",
   "package": "itamio.entitycollision.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [
-  ],
+  "mixins": [],
   "client": [
     "EntityCollisionMixin",
     "LivingEntityCollisionMixin"
   ],
-  "server": [
-  ],
+  "server": [],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "refmap": "entitycollision.refmap.json"
 }
